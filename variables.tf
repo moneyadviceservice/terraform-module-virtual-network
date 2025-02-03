@@ -28,11 +28,11 @@ variable "name" {
 
 variable "vnets" {
   type = map(object({
-    name_override = optional(string)
+    name          = string
     address_space = optional(list(string))
     existing      = optional(bool, false)
     subnets = map(object({
-      name_override     = optional(string)
+      name              = string
       address_prefixes  = list(string)
       service_endpoints = optional(list(string), [])
       delegations = optional(map(object({
