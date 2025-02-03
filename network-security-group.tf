@@ -1,6 +1,6 @@
 resource "azurerm_network_security_group" "this" {
   for_each            = var.network_security_groups
-  name                = each.value.name
+  name                = each.value.name_override == null ? "${each.key}-${var.env}" : each.value.name_override
   resource_group_name = each.value.resource_group_override == null ? local.resource_group : each.value.resource_group_override
   location            = var.location
 }
