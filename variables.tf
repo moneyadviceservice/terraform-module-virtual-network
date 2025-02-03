@@ -4,14 +4,10 @@ variable "env" {
 }
 
 variable "product" {
-  description = "https://hmcts.github.io/glossary/#product"
+  description = "Name of the service/product of the service"
   type        = string
 }
 
-variable "component" {
-  description = "https://hmcts.github.io/glossary/#component"
-  type        = string
-}
 
 variable "location" {
   description = "Target Azure location to deploy the resource"
@@ -27,7 +23,7 @@ variable "resource_group" {
 variable "name" {
   type        = string
   default     = null
-  description = "The default name will be product+component+env, you can override the product+component part by setting this"
+  description = "The default name will be product+env, you can override the product part by setting this"
 }
 
 variable "vnets" {

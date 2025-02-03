@@ -1,5 +1,5 @@
 locals {
-  name           = var.name != null ? var.name : "${var.product}-${var.component}"
+  name           = var.name
   is_prod        = length(regexall(".*(prod).*", var.env)) > 0
   resource_group = var.resource_group
   flattened_routes = flatten([
