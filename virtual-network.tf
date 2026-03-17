@@ -24,5 +24,4 @@ resource "azurerm_subnet" "this" {
       }
     }
   }
-  depends_on = [ azurerm_network_security_group.this ]
 }
